@@ -1,0 +1,20 @@
+pipeline {
+    agent {-----}
+    stages {
+        stage('Checkout Code From Git') {
+            steps {
+                git 'https://github.com/your-repo/your-project.git'
+            }
+        }
+        stage('Run Test Automate') {
+            steps {
+                sh 'robot tests'
+            }
+        }
+        stage('Send Result To Jenkins') {
+            steps {
+                robot resultdir: 'output'
+            }
+        }
+    }
+}
