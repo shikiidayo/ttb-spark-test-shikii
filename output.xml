@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.9.5 on win32)" generated="2025-03-19T01:33:34.166092" rpa="false" schemaversion="5">
+<suite id="s1" name="Ttb-Spark-Test-Shikii" source="C:\Users\shikii\PycharmProjects\ttb-spark-test-shikii">
+<suite id="s1-s1" name="PythonProject" source="C:\Users\shikii\PycharmProjects\ttb-spark-test-shikii\PythonProject">
+<suite id="s1-s1-s1" name="No4" source="C:\Users\shikii\PycharmProjects\ttb-spark-test-shikii\PythonProject\no4.robot">
+<test id="s1-s1-s1-t1" name="TC004 Access About menu" line="109">
+<kw name="Open Application test">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://127.0.0.1:4723/wd/hub</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>app=${ANDROID_APP}</arg>
+<arg>allow-insecure=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-03-19T01:33:34.364802" elapsed="10.791649"/>
+</kw>
+<status status="PASS" start="2025-03-19T01:33:34.364802" elapsed="10.791649"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-03-19T01:33:46.237795" level="INFO">xpath criteria: //android.widget.TextView[@text="You don't have any todos"]</msg>
+<arg>//android.widget.TextView[@text="You don't have any todos"]</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-03-19T01:33:45.156962" elapsed="1.080833"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-03-19T01:33:46.238792" level="INFO">Clicking element '//android.widget.ImageView[@content-desc="More options"]'.</msg>
+<msg time="2025-03-19T01:33:46.421332" level="INFO">xpath criteria: //android.widget.ImageView[@content-desc="More options"]</msg>
+<arg>//android.widget.ImageView[@content-desc="More options"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-03-19T01:33:46.237795" elapsed="0.183537"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-03-19T01:33:47.943536" level="INFO">xpath criteria: //android.widget.ListView/android.widget.LinearLayout[2]
+xpath criteria: //android.widget.ListView/android.widget.LinearLayout[2]</msg>
+<arg>//android.widget.ListView/android.widget.LinearLayout[2]</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-03-19T01:33:46.422840" elapsed="1.520696"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-03-19T01:33:47.945194" level="INFO">Clicking element '//android.widget.ListView/android.widget.LinearLayout[2]'.</msg>
+<msg time="2025-03-19T01:33:49.953411" level="INFO">xpath criteria: //android.widget.ListView/android.widget.LinearLayout[2]</msg>
+<arg>//android.widget.ListView/android.widget.LinearLayout[2]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-03-19T01:33:47.944074" elapsed="2.009337"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-03-19T01:33:50.037914" level="INFO">xpath criteria: //android.widget.TextView[@text="Made by Avjinder"]</msg>
+<arg>//android.widget.TextView[@text="Made by Avjinder"]</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-03-19T01:33:49.954719" elapsed="0.083195"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-03-19T01:33:50.107137" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/aboutVersionTextView"]</msg>
+<arg>//android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/aboutVersionTextView"]</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-03-19T01:33:50.037914" elapsed="0.069223"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-03-19T01:33:50.172586" level="INFO">xpath criteria: //android.widget.TextView[@text="You can contact me at"]</msg>
+<arg>//android.widget.TextView[@text="You can contact me at"]</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-03-19T01:33:50.107137" elapsed="0.065449"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-03-19T01:33:50.236565" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/aboutContactMe"]</msg>
+<arg>//android.widget.TextView[@resource-id="com.avjindersinghsekhon.minimaltodo:id/aboutContactMe"]</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-03-19T01:33:50.172586" elapsed="0.063979"/>
+</kw>
+<status status="PASS" start="2025-03-19T01:33:34.364295" elapsed="15.873552"/>
+</test>
+<status status="PASS" start="2025-03-19T01:33:34.191128" elapsed="16.046719"/>
+</suite>
+<status status="PASS" start="2025-03-19T01:33:34.190102" elapsed="16.048745"/>
+</suite>
+<status status="PASS" start="2025-03-19T01:33:34.168114" elapsed="16.070733"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Ttb-Spark-Test-Shikii" id="s1" pass="1" fail="0" skip="0">Ttb-Spark-Test-Shikii</stat>
+<stat name="PythonProject" id="s1-s1" pass="1" fail="0" skip="0">Ttb-Spark-Test-Shikii.PythonProject</stat>
+<stat name="No4" id="s1-s1-s1" pass="1" fail="0" skip="0">Ttb-Spark-Test-Shikii.PythonProject.No4</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
