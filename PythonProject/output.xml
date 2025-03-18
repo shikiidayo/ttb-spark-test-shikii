@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.9.5 on win32)" generated="2025-03-18T20:03:58.750576" rpa="false" schemaversion="5">
+<suite id="s1" name="PythonProject" source="C:\Users\shikii\PycharmProjects\PythonProject">
+<suite id="s1-s1" name="No3" source="C:\Users\shikii\PycharmProjects\PythonProject\no3.robot">
+<test id="s1-s1-t1" name="TC001 Get user profile success" line="34">
+<kw name="When Send request to get user profile with id : &quot;12&quot;" source_name="Send request to get user profile with id : &quot;${id}&quot;">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2025-03-18T20:03:58.940304" level="INFO">GET Request : url=https://reqres.in/api/users/12 
+ path_url=/api/users/12 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-03-18T20:03:58.940304" level="INFO">GET Response : url=https://reqres.in/api/users/12 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 18 Mar 2025 13:03:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1742301060&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=VwgcBa%2FMO6Y8neK3nrZZRrhGYEYq5a2IcDqFC7vWVSs%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1742301060&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=VwgcBa%2FMO6Y8neK3nrZZRrhGYEYq5a2IcDqFC7vWVSs%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"156-dRpOqAStViWxQQvYl7n1A1GXGFw"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '1979', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '9224eeeb1e382705-BKK', 'Content-Encoding': 'gzip', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=7255&amp;min_rtt=6464&amp;rtt_var=2677&amp;sent=5&amp;recv=6&amp;lost=0&amp;retrans=0&amp;sent_bytes=2836&amp;recv_bytes=771&amp;delivery_rate=453630&amp;cwnd=252&amp;unsent_bytes=0&amp;cid=c99a89974626858d&amp;ts=22&amp;x=0"'} 
+ body={"data":{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&amp;utm_medium=json&amp;utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}} 
+ </msg>
+<msg time="2025-03-18T20:03:58.941303" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${REQUEST_URL}${id}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2025-03-18T20:03:58.884209" elapsed="0.057094"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-03-18T20:03:58.941303" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<arg>${response}</arg>
+<arg>${response}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-03-18T20:03:58.941303" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-03-18T20:03:58.884209" elapsed="0.057094"/>
+</kw>
+<kw name="Then Validate response status code should be &quot;200&quot;" source_name="Validate response status code should be &quot;${status_code}&quot;">
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>${status_code}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-03-18T20:03:58.942300" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-03-18T20:03:58.942300" elapsed="0.000000"/>
+</kw>
+<kw name="And Validate response body ID should be &quot;12&quot;" source_name="Validate response body ID should be &quot;${expected_value}&quot;">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-03-18T20:03:58.944295" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.json()}[data][id]</arg>
+<arg>${expected_value}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-18T20:03:58.943298" elapsed="0.000997"/>
+</kw>
+<status status="PASS" start="2025-03-18T20:03:58.943298" elapsed="0.000997"/>
+</kw>
+<kw name="And Validate response body Email should be &quot;rachel.howell@reqres.in&quot;" source_name="Validate response body Email should be &quot;${expected_value}&quot;">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${response.json()}[data][email]</arg>
+<arg>${expected_value}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-18T20:03:58.944295" elapsed="0.001028"/>
+</kw>
+<status status="PASS" start="2025-03-18T20:03:58.944295" elapsed="0.001028"/>
+</kw>
+<kw name="And Validate response body Firstname should be &quot;Rachel&quot;" source_name="Validate response body Firstname should be &quot;${expected_value}&quot;">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${response.json()}[data][first_name]</arg>
+<arg>${expected_value}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-18T20:03:58.946290" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-03-18T20:03:58.945323" elapsed="0.000967"/>
+</kw>
+<kw name="And Validate response body Lastname should be &quot;Howell&quot;" source_name="Validate response body Lastname should be &quot;${expected_value}&quot;">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${response.json()}[data][last_name]</arg>
+<arg>${expected_value}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-18T20:03:58.947271" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-03-18T20:03:58.947271" elapsed="0.000000"/>
+</kw>
+<kw name="And Validate response body Avatar should be &quot;https://reqres.in/img/faces/12-image.jpg&quot;" source_name="Validate response body Avatar should be &quot;${expected_value}&quot;">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${response.json()}[data][avatar]</arg>
+<arg>${expected_value}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-18T20:03:58.948297" elapsed="0.001031"/>
+</kw>
+<status status="PASS" start="2025-03-18T20:03:58.948297" elapsed="0.001031"/>
+</kw>
+<status status="PASS" start="2025-03-18T20:03:58.883214" elapsed="0.066114"/>
+</test>
+<test id="s1-s1-t2" name="TC002 Get user profile but user not found" line="43">
+<kw name="When Send request to get user profile with id : &quot;1234&quot;" source_name="Send request to get user profile with id : &quot;${id}&quot;">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2025-03-18T20:03:59.488346" level="INFO">GET Request : url=https://reqres.in/api/users/1234 
+ path_url=/api/users/1234 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-03-18T20:03:59.488346" level="INFO">GET Response : url=https://reqres.in/api/users/1234 
+ status=404, reason=Not Found 
+ headers={'Date': 'Tue, 18 Mar 2025 13:03:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '2', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1742303039&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=JJyNFcJWsii5TJ%2Fwf9fjlcmwDoEPocbsaKM8TROnJww%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1742303039&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=JJyNFcJWsii5TJ%2Fwf9fjlcmwDoEPocbsaKM8TROnJww%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'EXPIRED', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '9224eeeb6e94d032-BKK', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=6988&amp;min_rtt=6955&amp;rtt_var=2674&amp;sent=5&amp;recv=6&amp;lost=0&amp;retrans=0&amp;sent_bytes=2834&amp;recv_bytes=773&amp;delivery_rate=586703&amp;cwnd=252&amp;unsent_bytes=0&amp;cid=4e9befa67750f558&amp;ts=520&amp;x=0"'} 
+ body={} 
+ </msg>
+<msg time="2025-03-18T20:03:59.488346" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<var>${response}</var>
+<arg>${REQUEST_URL}${id}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2025-03-18T20:03:58.951349" elapsed="0.536997"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-03-18T20:03:59.489370" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<arg>${response}</arg>
+<arg>${response}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-03-18T20:03:59.488346" elapsed="0.001024"/>
+</kw>
+<status status="PASS" start="2025-03-18T20:03:58.950328" elapsed="0.539042"/>
+</kw>
+<kw name="Then Validate response status code should be &quot;404&quot;" source_name="Validate response status code should be &quot;${status_code}&quot;">
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>${status_code}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-03-18T20:03:59.490368" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-03-18T20:03:59.489370" elapsed="0.000998"/>
+</kw>
+<kw name="And Validate response body should be empty">
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2025-03-18T20:03:59.491581" level="INFO">Length is 0.</msg>
+<arg>${response.json()}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="PASS" start="2025-03-18T20:03:59.491581" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-03-18T20:03:59.491047" elapsed="0.000534"/>
+</kw>
+<status status="PASS" start="2025-03-18T20:03:58.950328" elapsed="0.542209"/>
+</test>
+<status status="PASS" start="2025-03-18T20:03:58.775512" elapsed="0.717667"/>
+</suite>
+<status status="PASS" start="2025-03-18T20:03:58.752570" elapsed="0.741619"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="PythonProject" id="s1" pass="2" fail="0" skip="0">PythonProject</stat>
+<stat name="No3" id="s1-s1" pass="2" fail="0" skip="0">PythonProject.No3</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
